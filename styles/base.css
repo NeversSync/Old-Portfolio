@@ -1,0 +1,23 @@
+body {
+  width: 100%;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+}
+
+/*Link styles*/
+a, a:link, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover, a:focus {
+  color: grey;
+  text-shadow: 1px 1px cyan;
+}
+
+a:visited {
+  color: #AAA;
+}
