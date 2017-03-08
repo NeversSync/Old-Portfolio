@@ -1,7 +1,11 @@
 /*nav styling*/
-header h1 {
+#logo {
   text-align: center;
   margin: 2% auto;
+}
+
+header h1 {
+  margin: 1%;
 }
 
 .icon-menu {
@@ -44,4 +48,10 @@ nav:hover ul {
   nav:hover ul, nav {
   display: inline;
   } 
+}
+
+/*article styling */
+
+.template {
+  display: none;
 }
