@@ -1,5 +1,6 @@
 var projects = [];
 var blogProjects;
+var blogView = {};
 
 function Project (options) {
   this.category = options.category;
@@ -33,3 +34,13 @@ blogProjects.forEach(function(ele) {
 projects.forEach(function(project) {
   $('#articles').append(project.toHtml());
 });
+
+blogView.handleMainNav = function() {
+  $('.main-nav').on('click', '.tab', function() {
+   $('.tab-content').hide();
+   var $clickedTab = $(this).attr('data-content');
+   $('#' + $clickedTab).fadeIn(1000); 
+  })
+};
+
+blogView.handleMainNav();
