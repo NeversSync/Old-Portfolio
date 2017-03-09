@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Nicky Evers</title>
+  <link href="https://fonts.googleapis.com/css?family=Astloch|Bubbler+One|Bungee+Hairline|Kumar+One+Outline|Snippet" rel="stylesheet">
   <link rel="stylesheet" href="vendor/icons.css">
   <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="styles/base.css">
@@ -14,34 +15,45 @@
 <body>
   <header id="main-header" class="clearfix">
     <h1 id="logo">Nicky Evers</h1>
-    <nav>
+    <nav class="main-nav">
     <div class="mobile-menu">
       <button class="icon-menu pull-right"></button>
     </div>
       <ul>
-        <li class="nav-link">
+        <li class="tab" data-content="articles">
           <a href="#">Home</a>
         </li>
-        <li class="nav-link">
+        <li class="tab" data-content="about">
           <a href="#">About</a>
         </li>
-        <li class="nav-link">
+        <li class="tab">
           <a href="#">Projects</a>
+        </li>
+        <li class="tab">
+          <a href="https://github.com/NeversSync" target="_blank">GitHub</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="articles">
+    <section id="articles" class="tab-content">
       <article class="template" data-category="category">
         <header>
-          <h1>Title</h1>
+          <h1 class="project-title">Title</h1>
           <div class="byline">
             <a href="">Project Website</a>
             Completed <time pubdate datetime="2000-01-01"></time>
           </div>
         </header>
         <section class="project-description"></section>
+      </article>
+    </section>
+    <section id="about" class="tab-content">
+      <article>
+        <h1>About me</h1>
+        <p>Biomat empowering messages co-create, tahini surrender ganja nudist microfestival occupy. Nature Phish white sage, visualization practices fractal nature of. Silent disco apple cider vinegar Bay Area, didgeridoo tincture. Reprogramming your DNA continuum aho somatic pranayama fertility awareness mendo double rainbow, tapping past life. Folk music ganesh peace wicca, gut flora morphic resonance. Perineum conflict resolution ancient chinese wisdom juicy, farm to table kombucha cuddle party lavendar. Raw cacao plant consciousness henna tattoo papyrus font, dolphin watsu spirit animal.
+        <br>
+        Hooping nectar solstice radiant consciousness, psilocybin native american ancestry science has proven that yerba matte. Spiritual massage therapist alkaline, morphic resonance paleo diet shamanic ceremony master Phish mendo. Karmic oneness holographic resonance Bay Area, nag champa conflict resolution grass-fed. Natural homebirth vegan channeling, activated charcoal to end suffering new moon. Papyrus font tofurkey indigenous elders, astrological retreat. Fair trade reverse osmosis continuum transformative beekeeping meditation monogamish, nonviolent communication be the change didgeridoo vitamix. Papasan watsu cleansing, coconut water open-minded mayan calendar Dr. Bronner's. Namaste.</p>
       </article>
     </section>
   </main>
