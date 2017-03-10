@@ -1,6 +1,7 @@
+'use strict';
+
 var projects = [];
 var blogProjects;
-var blogView = {};
 
 function Project (options) {
   this.category = options.category;
@@ -14,7 +15,7 @@ Project.prototype.toHtml = function() {
   var source = $('#article-template').html();
   var template = Handlebars.compile(source);
   var html = template(this);
-  
+
   return html;
 };
 
