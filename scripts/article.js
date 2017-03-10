@@ -1,6 +1,7 @@
+'use strict';
+
 var projects = [];
 var blogProjects;
-var blogView = {};
 
 function Project (options) {
   this.category = options.category;
@@ -11,17 +12,12 @@ function Project (options) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone().removeClass('template');
+  var source = $('#article-template').html();
+  var template = Handlebars.compile(source);
+  var html = template(this);
 
-  $newProject.find('article').attr('data-category', this.category);
-  $newProject.find('h1').text(this.title);
-  $newProject.find('a').attr('href', this.projectUrl);
-  $newProject.find('.project-description').html(this.body);
-  $newProject.find('time[pubdate]').attr('title', this.madeOn);
-  $newProject.find('time').text('about ' + parseInt((new Date() - new Date(this.madeOn))/60/60/24/1000) + ' days ago');
-  
-  return $newProject;
-}
+  return html;
+};
 
 blogProjects.sort(function(currentObject, nextObject) {
   return (new Date(nextObject.madeOn)) - (new Date(currentObject.madeOn));
@@ -34,13 +30,3 @@ blogProjects.forEach(function(ele) {
 projects.forEach(function(project) {
   $('#articles').append(project.toHtml());
 });
-
-blogView.handleMainNav = function() {
-  $('.main-nav').on('click', '.tab', function() {
-   $('.tab-content').hide();
-   var $clickedTab = $(this).attr('data-content');
-   $('#' + $clickedTab).fadeIn(1000); 
-  })
-};
-
-blogView.handleMainNav();
