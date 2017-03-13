@@ -8,11 +8,10 @@ body {
   text-shadow: .5px .5px 1px grey;
 }
 
-/*TODO: change font on select element
-TODO: add text shadow
+/*TODO
 - add type scale
 -more sectioning and backgruond/images
-/*-animations*/
+-animations*/
 
 /*Link styles*/
 a, a:link, a:active {
