@@ -33,6 +33,8 @@ blogView.handleMainNav = function() {
     $('.tab-content').hide();
     var clickedTab = $(this).attr('data-content');
     $('#' + clickedTab).fadeIn(1000); 
+    } else {
+     $('.tab-content').fadeIn(1000);
     }
   });
   $('.main-nav .tab:first').click();
