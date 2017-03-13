@@ -3,11 +3,9 @@
 var blogView = {};
 
 blogView.populateFilters = function() {
-  $('article').each(function() {
-      var val = $(this).find('address a').text();
+  $('article[data-category]').each(function() {
+      var val = $(this).attr('data-category');
       var optionTag = `<option value="${val}">${val}</option>`;
-      val = $(this).attr('data-category');
-      optionTag = `<option value="${val}">${val}</option>`;
       if ($(`#category-filter option[value="${val}"]`).length === 0) {
         $('#category-filter').append(optionTag);
       }
@@ -23,7 +21,6 @@ blogView.handleCategoryFilter = function() {
       $('article').fadeIn();
       $('article.template').hide();
     }
-    $('#author-filter').val('');
   });
 };
 
