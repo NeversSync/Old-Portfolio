@@ -2,7 +2,6 @@
   float: right;
 }
 
-
 .pull-left {
   float: left;
 }
@@ -11,4 +10,24 @@
   content: "";
   display: table;
   clear: both;
+}
+
+main {
+  margin: 2% 3%;
+  padding-bottom: 1%;
+}
+
+@media only screen and (min-width: 900px) {
+  .icon-menu {
+    display: none;
+  }
+  nav ul, nav li {
+    display: inline;
+  }
+  nav:hover ul, nav {
+  display: inline;
+  } 
+  #filters {
+    text-align: left;
+  }
 }
