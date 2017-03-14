@@ -30,15 +30,17 @@ Project.loadAll = function(rawData) {
 
 Project.fetchAll = function() {
   if (localStorage.stored_projects) {
-    var localStor = localStorage.getItem('stored_projects');
-    Project.loadAll(localStor);
+    var storedArray = localStorage.getItem('stored_projects');
+    var jsonArray = JSON.parse(storedArray);
+    Project.loadAll(jsonArray);
     projectView.initIndex();
   } else {
     $.ajax({
       url: 'data/blogProjects.json',
       method: 'GET',
       success: function(rawData) {
-        localStorage.setItem('stored_projects', rawData);
+        var stringData = JSON.stringify(rawData);
+        localStorage.setItem('stored_projects', stringData);
         Project.loadAll(rawData);
         projectView.initIndex();
       }
