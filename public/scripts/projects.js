@@ -29,7 +29,7 @@ Project.loadAll = function(rawData) {
 };
 
 Project.fetchAll = function() {
-  if (localStorage.rawData) {
+  if (localStorage.stored_projects) {
     var localStor = localStorage.getItem('stored_projects');
     Project.loadAll(localStor);
     projectView.initIndex();
