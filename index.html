@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="vendor/icons.css">
   <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="styles/layout.css">
 
   <script id="article-template" type="text/x-handlebars-template">
      <article data-category="{{category}}">
@@ -55,26 +55,28 @@
           <ul id="filters">
             <li>
               <select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
+                <option value="">-- Filter by Category --</option>
               </select>
             </li>
           </ul>
         </div>
     </section>
     <section id="about" class="tab-content">
-      <article>
-        <h1>About me</h1>
+      <section>
+        <h1 id="about-title">About me</h1>
         <p>Biomat empowering messages co-create, tahini surrender ganja nudist microfestival occupy. Nature Phish white sage, visualization practices fractal nature of. Silent disco apple cider vinegar Bay Area, didgeridoo tincture. Reprogramming your DNA continuum aho somatic pranayama fertility awareness mendo double rainbow, tapping past life. Folk music ganesh peace wicca, gut flora morphic resonance. Perineum conflict resolution ancient chinese wisdom juicy, farm to table kombucha cuddle party lavendar. Raw cacao plant consciousness henna tattoo papyrus font, dolphin watsu spirit animal.
         <br>
         Hooping nectar solstice radiant consciousness, psilocybin native american ancestry science has proven that yerba matte. Spiritual massage therapist alkaline, morphic resonance paleo diet shamanic ceremony master Phish mendo. Karmic oneness holographic resonance Bay Area, nag champa conflict resolution grass-fed. Natural homebirth vegan channeling, activated charcoal to end suffering new moon. Papyrus font tofurkey indigenous elders, astrological retreat. Fair trade reverse osmosis continuum transformative beekeeping meditation monogamish, nonviolent communication be the change didgeridoo vitamix. Papasan watsu cleansing, coconut water open-minded mayan calendar Dr. Bronner's. Namaste.</p>
-      </article>
+      </section>
     </section>
   </main>
 
-<script type="text/javascript" src="scripts/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="vendor/scripts/jquery-3.1.1.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-<script type="text/javascript" src="scripts/blogProjects.js"></script>
 <script type="text/javascript" src="scripts/projects.js"></script>
 <script src="scripts/projectView.js"></script>
+<script>
+   Project.fetchAll();
+</script>
 </body>
 </html>

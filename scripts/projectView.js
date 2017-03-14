@@ -1,20 +1,18 @@
 'use strict';
 
-var blogView = {};
+const projectView = {};
 
-blogView.populateFilters = function() {
-  $('article').each(function() {
-      var val = $(this).find('address a').text();
+projectView.populateFilters = function() {
+  $('article[data-category]').each(function() {
+      var val = $(this).attr('data-category');
       var optionTag = `<option value="${val}">${val}</option>`;
-      val = $(this).attr('data-category');
-      optionTag = `<option value="${val}">${val}</option>`;
       if ($(`#category-filter option[value="${val}"]`).length === 0) {
         $('#category-filter').append(optionTag);
-      }
+      } 
   })
 };
 
-blogView.handleCategoryFilter = function() {
+projectView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -23,11 +21,11 @@ blogView.handleCategoryFilter = function() {
       $('article').fadeIn();
       $('article.template').hide();
     }
-    $('#author-filter').val('');
   });
 };
 
-blogView.handleMainNav = function() {
+// TODO: empty category filter on tab click
+projectView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function() {
     if($(this).attr('data-content')) {
     $('.tab-content').hide();
@@ -40,8 +38,8 @@ blogView.handleMainNav = function() {
   $('.main-nav .tab:first').click();
 };
 
-blogView.setTeasers = function() {
-  $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any article body.
+projectView.setTeasers = function() {
+  $('.article-body *:nth-of-type(n+2)').hide(); // this hides elements beyond the first 2 in article body.
 
   $('#articles').on('click', 'a.read-on', function(e) {
     e.preventDefault();
@@ -50,9 +48,12 @@ blogView.setTeasers = function() {
   });
 };
 
-$(document).ready(function() {
-  blogView.populateFilters();
-  blogView.handleCategoryFilter();
-  blogView.handleMainNav();
-  blogView.setTeasers();
-});
+projectView.initIndex = function() {
+    Project.all.forEach(function(project) {
+    $('#articles').append(project.toHtml());
+  });
+  projectView.populateFilters();
+  projectView.handleCategoryFilter();
+  projectView.handleMainNav();
+  projectView.setTeasers();
+};

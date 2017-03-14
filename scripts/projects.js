@@ -1,8 +1,5 @@
 'use strict';
 
-var projects = [];
-var blogProjects;
-
 function Project (options) {
   this.category = options.category;
   this.title = options.title;
@@ -10,6 +7,8 @@ function Project (options) {
   this.madeOn = options.madeOn;
   this.body = options.body;
 }
+
+Project.all = [];
 
 Project.prototype.toHtml = function() {
   var source = $('#article-template').html();
@@ -19,14 +18,30 @@ Project.prototype.toHtml = function() {
   return html;
 };
 
-blogProjects.sort(function(currentObject, nextObject) {
-  return (new Date(nextObject.madeOn)) - (new Date(currentObject.madeOn));
-});
+Project.loadAll = function(rawData) {
+  rawData.sort(function(currentObject, nextObject) {
+    return (new Date(nextObject.madeOn)) - (new Date(currentObject.madeOn));
+  });
 
-blogProjects.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+  rawData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  });
+};
 
-projects.forEach(function(project) {
-  $('#articles').append(project.toHtml());
-});
+Project.fetchAll = function() {
+  if (localStorage.rawData) {
+    var localStor = localStorage.getItem('stored_projects');
+    Project.loadAll(localStor);
+    projectView.initIndex();
+  } else {
+    $.ajax({
+      url: 'data/blogProjects.json',
+      method: 'GET',
+      success: function(rawData) {
+        localStorage.setItem('stored_projects', rawData);
+        Project.loadAll(rawData);
+        projectView.initIndex();
+      }
+    });
+  }
+};

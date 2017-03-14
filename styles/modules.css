@@ -34,7 +34,7 @@ nav:hover ul {
   display: block;
   width: 50%;
   margin: 0px auto;
-  text-shadow: 0px 0px 40px grey;
+  text-shadow: 0px 0px 1px grey;
 }
   
 .tab {
@@ -42,25 +42,37 @@ nav:hover ul {
   text-align: center;
 }
 
-
-@media only screen and (min-width: 850px) {
-  .icon-menu {
-    display: none;
-  }
-  nav ul, nav li {
-    display: inline;
-  }
-  nav:hover ul, nav {
-  display: inline;
-  } 
-}
-
 /*article styling */
-
-.template {
-  display: none;
-}
 
 .project-title {
   text-shadow: 1px 1px 2px grey;
+  margin-bottom: .5%;
+}
+
+/*Select styling*/
+
+#filters {
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+}
+
+select {
+  font-family: 'Bubbler one', cursive;
+  box-shadow: 0px 0px 5px 0px grey;
+}
+
+select:focus {
+ box-shadow: 0px 0px 5px 0px cyan;
+}
+
+/*about styling*/
+
+#about-title {
+  text-shadow: 1px 1px 2px grey;
+  margin-bottom: .5%;
+}
+
+#about p {
+  margin: 0px;
 }
