@@ -5,8 +5,8 @@
 
   const ui = function() {
     let $about = $('#about');
-    $about.find('#github').empty();
-    // $about.show().siblings().hide();
+    // $about.find('#github').empty();
+    $about.show().siblings().hide();
   };
 
   function render(repo) {

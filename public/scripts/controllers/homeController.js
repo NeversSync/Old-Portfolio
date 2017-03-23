@@ -1,5 +1,5 @@
 'use strict';
-Project.fetchAll(projectView.initIndex);
+  Project.fetchAll(projectView.initIndex);
 
 (function(module) {
   const homeController = {};

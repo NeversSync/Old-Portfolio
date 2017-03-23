@@ -16,8 +16,8 @@ repos.requestRepos = function(callback) {
     result.filter(r => !r.fork)
     .map(function(ele) {
       repos.all.push(ele)
-      callback();
     })
+    callback();
    })
   .catch((err) => {console.error});
 }
