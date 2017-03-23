@@ -24,6 +24,15 @@
         <section class="project-description">{{{body}}}</section>
       </article>
   </script>
+  <script id="repo-template" type="text/x-handlebars-template">
+    <h3>GitHub Repositories</h3>
+    <ul>
+      <li>
+        <p>Name of project: {{name}}</p>
+        <a href="{{html_url}}">Website</a>
+      </li>
+    </ul>
+  </script>
 
 </head>
 <body>
@@ -41,7 +50,7 @@
           <a href="/about">About</a>
         </li>
         <li class="tab" data-content="articles">
-          <a href="/articles">Projects</a>
+          <a href="/projects">Projects</a>
         </li>
         <li class="tab">
           <a href="https://github.com/NeversSync" target="_blank">GitHub</a>
@@ -62,7 +71,7 @@
         </div>
     </section>
     <section id="about" class="tab-content">
-      <section>
+      <section id="github">
         <h1 id="about-title">About me</h1>
         <p>Biomat empowering messages co-create, tahini surrender ganja nudist microfestival occupy. Nature Phish white sage, visualization practices fractal nature of. Silent disco apple cider vinegar Bay Area, didgeridoo tincture. Reprogramming your DNA continuum aho somatic pranayama fertility awareness mendo double rainbow, tapping past life. Folk music ganesh peace wicca, gut flora morphic resonance. Perineum conflict resolution ancient chinese wisdom juicy, farm to table kombucha cuddle party lavendar. Raw cacao plant consciousness henna tattoo papyrus font, dolphin watsu spirit animal.
         <br>
@@ -71,14 +80,17 @@
     </section>
   </main>
 
-<script src="vendor/scripts/page.js"></script>
 <script src="vendor/scripts/jquery-3.1.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+<script src="vendor/scripts/page.js"></script>
 <script src="scripts/model/projects.js"></script>
 <script src="scripts/view/projectView.js"></script>
+<script src="scripts/view/repoView.js"></script>
+<script src="scripts/model/gitToken.js"></script>
 <script src="scripts/controllers/homeController.js"></script>
-<script src="scripts/controllers/aboutController.js"></script>
 <script src="scripts/controllers/projectController.js"></script>
+<script src="scripts/model/repo.js"></script>
+<script src="scripts/controllers/aboutController.js"></script>
 <script src="scripts/controllers/routes.js"></script>
 </body>
 </html>
