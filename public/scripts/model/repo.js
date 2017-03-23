@@ -8,9 +8,6 @@ repos.all = [];
 repos.requestRepos = function(callback) {
   $.ajax('https://api.github.com/users/neverssync/repos', {
     method: 'GET',
-    headers: {
-      Authorization: `token ${token}`
-    }
   }) 
   .then((result) => {
     result.filter(r => !r.fork)
